@@ -31,8 +31,11 @@ Route::get('/add/{a}/{b}', function ($a, $b) {
 	return intval($a) + intval($b);
 });
 
-Route::get('/rolldice', function () {
+Route::get('/rolldice/{guess}', function ($guess) {
 	$roll = mt_rand(1, 6);
-	$data = ['roll' => $roll];
+	$roll == $guess ? $match = 'YES!' : $match = 'No luck!';
+	$data = ['roll' => $roll,
+			'guess' => $guess,
+			'match' => $match];
 	return view('roll-dice', $data);
 });

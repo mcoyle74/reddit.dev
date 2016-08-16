@@ -4,6 +4,10 @@
 	<title>Roll Dice</title>
 </head>
 <body>
-	<p>Roll: <?= $roll; ?></p>
+	<h1>
+		Roll: <?= $roll; ?><br>
+		Guess: <?= $guess; ?><br>
+		Match: <?= $match; ?>
+	</h1>
 </body>
 </html>
