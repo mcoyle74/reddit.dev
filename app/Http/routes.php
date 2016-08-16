@@ -20,7 +20,10 @@ Route::get('/sayhello/{name?}', function ($name = 'Michael') {
 });
 
 Route::get('/uppercase/{word}', function ($word) {
-	return strtoupper($word);
+	$upper = strtoupper($word);
+	$data = ['word' => $word,
+			'upper' => $upper];
+	return view('uppercase', $data);
 });
 
 Route::get('/increment/{number}', function ($number) {
