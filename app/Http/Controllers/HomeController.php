@@ -19,7 +19,7 @@ class HomeController extends Controller
 		return view('roll-dice', $data);
 	}
 
-	public function upppercase($word) {
+	public function uppercase($word) {
 		$upper = strtoupper($word);
 		$data = ['word' => $word,
 				'upper' => $upper];
@@ -32,7 +32,7 @@ class HomeController extends Controller
 				'increment' => $increment];
 		return view('increment', $data);
 	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
