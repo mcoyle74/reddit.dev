@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/sayhello/{name?}', function ($name = 'Michael') {
 	return "Hello, $name!";
 });
+
+Route::get('/uppercase/{word}', function ($word) {
+	return strtoupper($word);
+});
