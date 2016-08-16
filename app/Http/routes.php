@@ -26,3 +26,7 @@ Route::get('/uppercase/{word}', function ($word) {
 Route::get('/increment/{number}', function ($number) {
 	return intval($number) + 1;
 });
+
+Route::get('/add/{a}/{b}', function ($a, $b) {
+	return $a + $b;
+});
