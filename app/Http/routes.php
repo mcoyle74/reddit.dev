@@ -28,5 +28,5 @@ Route::get('/increment/{number}', function ($number) {
 });
 
 Route::get('/add/{a}/{b}', function ($a, $b) {
-	return $a + $b;
+	return intval($a) + intval($b);
 });
