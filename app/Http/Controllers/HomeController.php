@@ -18,6 +18,20 @@ class HomeController extends Controller
 				'match' => $match];
 		return view('roll-dice', $data);
 	}
+
+	public function upppercase($word) {
+		$upper = strtoupper($word);
+		$data = ['word' => $word,
+				'upper' => $upper];
+		return view('uppercase', $data);
+	}
+
+	public function increment($number) {
+		$increment = $number + 1;
+		$data = ['number' => $number,
+				'increment' => $increment];
+		return view('increment', $data);
+	}
 	
 	/**
 	 * Display a listing of the resource.
