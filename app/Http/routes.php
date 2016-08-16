@@ -22,3 +22,7 @@ Route::get('/sayhello/{name?}', function ($name = 'Michael') {
 Route::get('/uppercase/{word}', function ($word) {
 	return strtoupper($word);
 });
+
+Route::get('/increment/{number}', function ($number) {
+	return intval($number) + 1;
+});
