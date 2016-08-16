@@ -32,5 +32,7 @@ Route::get('/add/{a}/{b}', function ($a, $b) {
 });
 
 Route::get('/rolldice', function () {
-	return mt_rand(1, 6);
+	$roll = mt_rand(1, 6);
+	$data = ['roll' => $roll];
+	return view('roll-dice', $data);
 });
