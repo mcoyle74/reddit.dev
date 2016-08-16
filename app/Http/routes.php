@@ -30,3 +30,7 @@ Route::get('/increment/{number}', function ($number) {
 Route::get('/add/{a}/{b}', function ($a, $b) {
 	return intval($a) + intval($b);
 });
+
+Route::get('/rolldice', function () {
+	return mt_rand(1, 6);
+});
