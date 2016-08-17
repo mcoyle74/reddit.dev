@@ -19,18 +19,16 @@ class HomeController extends Controller
 		return view('roll-dice', $data);
 	}
 
-	public function uppercase($word) {
+	public function uppercase($word = 'i\'m spartacus!') {
 		$upper = strtoupper($word);
 		$data = ['word' => $word,
 				'upper' => $upper];
 		return view('uppercase', $data);
 	}
 
-	public function increment($number) {
-		$increment = $number + 1;
-		$data = ['number' => $number,
-				'increment' => $increment];
-		return view('increment', $data);
+	public function increment($number = 0) {
+		$number += 1;
+		return view('increment')->with('number', $number);
 	}
 
 	/**

@@ -19,9 +19,9 @@ Route::get('/sayhello/{name?}', function ($name = 'Michael') {
 	return "Hello, $name!";
 });
 
-Route::get('/uppercase/{word}', 'HomeController@uppercase');
+Route::get('/uppercase/{word?}', 'HomeController@uppercase');
 
-Route::get('/increment/{number}', 'HomeController@increment');
+Route::get('/increment/{number?}', 'HomeController@increment');
 
 Route::get('/add/{a}/{b}', function ($a, $b) {
 	return intval($a) + intval($b);
