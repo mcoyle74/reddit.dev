@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -16,7 +17,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return 'A list of all posts';
+        $posts = Post::all();
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -48,7 +50,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        return 'Show a specific post';
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -71,7 +74,9 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 'Update a specific post';
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->save();
     }
 
     /**
