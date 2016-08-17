@@ -26,7 +26,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return 'A form for creating a post';
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Stores the new post';
+        return back()->withInput();
     }
 
     /**
