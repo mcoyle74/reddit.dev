@@ -18,4 +18,5 @@
 			@endforeach
 		</tbody>
 	</table>
+	{!! $posts->render() !!}	
 @stop
