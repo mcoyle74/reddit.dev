@@ -39,13 +39,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = [
-            'title' => 'required|max:100',
-            'url' => 'required|max:255',
-            'content' => 'required'
-        ];
-        $this->validate($request, $rules);
-
+        $this->validate($request, Post::$rules);
         $post = new Post;
         $post->title = $request->input('title');
         $post->url = $request->input('url');
@@ -87,6 +81,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, Post::$rules);
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->url = $request->input('url');
