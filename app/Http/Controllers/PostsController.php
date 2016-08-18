@@ -39,7 +39,13 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        return back()->withInput();
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->url = $request->input('url');
+        $post->content = $request->input('content');
+        $post->created_by = 1;
+        $post->save();
+        return redirect()->action('PostsController@index');
     }
 
     /**
@@ -76,6 +82,8 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->title = $request->input('title');
+        $post->url = $request->input('url');
+        $post->content = $request->input('content');
         $post->save();
     }
 
