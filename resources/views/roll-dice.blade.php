@@ -1,16 +1,14 @@
 @extends('layouts.master')
 @section('content')
-	<div class="container">
-		<h1>
-			Roll: {{ $roll }}<br>
-			Guess: {{ $guess }}<br>
-			Match: {{ $match }}
-		</h1>
-		<h3>Guess again:</h3>
-		<ul>
-			@for ($i = 1; $i <= 6; $i++)
-				<li><a href="{{ action('HomeController@rollDice', $i) }}">{{ $i }}</a></li>
-			@endfor
-		</ul>
-	</div>
+	<h1>
+		Roll: {{ $roll }}<br>
+		Guess: {{ $guess }}<br>
+		Match: {{ $match }}
+	</h1>
+	<h3>Guess again:</h3>
+	<ul>
+		@for ($i = 1; $i <= 6; $i++)
+			<li><a href="{{ action('HomeController@rollDice', $i) }}">{{ $i }}</a></li>
+		@endfor
+	</ul>
 @stop
