@@ -23,7 +23,7 @@
 			<input class="form-control" type="text" name="content" value="{{ old('content') }}">
 			@if ($errors->has('content'))
 				{!!  $errors->first('content', '<span class="alert alert-warning">:message</span>') !!}
-				@endif
+			@endif
 		</div>
 
 		<button class="btn btn-default" type="submit">Submit</button>
