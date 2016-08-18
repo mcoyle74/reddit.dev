@@ -26,6 +26,6 @@
 				@endif
 		</div>
 
-		<button type="submit">Submit</button>
+		<button class="btn btn-default" type="submit">Submit</button>
 	</form>
 @stop
