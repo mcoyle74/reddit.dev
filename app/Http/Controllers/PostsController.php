@@ -39,6 +39,13 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'title' => 'required|max:100',
+            'url' => 'required|max:255',
+            'content' => 'required'
+        ];
+        $this->validate($request, $rules);
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->url = $request->input('url');
