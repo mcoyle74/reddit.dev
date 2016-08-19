@@ -20,8 +20,8 @@
 <body>
 	<div class="container">
 		@yield('content')
-		@if ($request->session()->has('message'))
-			<div class="alert alert-success">{{ session('successMessage') }}</div>
+		@if (session()->has('message'))
+			<div class="alert alert-success">{{ session('message') }}</div>
 		@endif
 	</div>
 

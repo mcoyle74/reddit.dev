@@ -17,7 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(4);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -26,8 +26,9 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->session()->flash('message', 'Success!');
         return view('posts.create');
     }
 
@@ -95,7 +96,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         return 'Delete a specific post';
     }
