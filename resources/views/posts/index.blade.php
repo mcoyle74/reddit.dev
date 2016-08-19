@@ -8,6 +8,13 @@
 				<th>Content</th>
 			</tr>
 		</thead>
+		<tfoot>
+			<tr>
+				<td>
+					{!! $posts->render() !!}
+				</td>
+			</tr>
+		</tfoot>
 		<tbody>
 			@foreach ($posts as $post)
 				<tr>
@@ -18,5 +25,4 @@
 			@endforeach
 		</tbody>
 	</table>
-	{!! $posts->render() !!}	
 @stop
