@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Log;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
@@ -47,6 +47,7 @@ class PostsController extends Controller
         $post->content = $request->input('content');
         $post->created_by = 1;
         $post->save();
+        Log::info(print_r($request->input(), true));
         return redirect()->action('PostsController@index');
     }
 
