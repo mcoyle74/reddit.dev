@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +33,6 @@ class PostsController extends Controller
      */
     public function create(Request $request)
     {
-        $request->session()->flash('message', 'Success!');
         return view('posts.create');
     }
 
@@ -40,12 +44,15 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->session()->flash('ERROR_MESSAGE', 'Error: post was not saved.');
         $this->validate($request, Post::$rules);
+        $request->session()->flash('SUCCESS_MESSAGE', 'Success! Post was saved.');
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->url = $request->input('url');
         $post->content = $request->input('content');
-        $post->created_by = 1;
+        $post->created_by = Auth::user()->id;
         $post->save();
         Log::info(print_r($request->input(), true));
         return redirect()->action('PostsController@index');
@@ -74,7 +81,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return 'Show a form for editing a specific post';
+        return view('posts.update');
     }
 
     /**
@@ -102,6 +109,8 @@ class PostsController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        return 'Delete a specific post';
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->action('PostsController@index');
     }
 }
