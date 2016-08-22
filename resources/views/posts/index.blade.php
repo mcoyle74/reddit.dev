@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-	<table class="table table-striped">
+	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
 				<th>Title</th>
@@ -9,13 +9,6 @@
 				<th>Created</th>
 			</tr>
 		</thead>
-		<tfoot>
-			<tr>
-				<td>
-					{!! $posts->render() !!}
-				</td>
-			</tr>
-		</tfoot>
 		<tbody>
 			@foreach ($posts as $post)
 				<tr>
@@ -27,5 +20,10 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a href="{{ action('PostsController@create') }}">Create a Post</a>
+	<div class="text-center">
+		{!! $posts->render() !!}
+	</div>
+	<div>
+		<a href="{{ action('PostsController@create') }}">Create a Post</a>
+	</div>
 @stop
