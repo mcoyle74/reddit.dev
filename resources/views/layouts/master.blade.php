@@ -63,7 +63,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/posts/create">Create Post</a></li>
 							<li><a href="#">Edit Profile</a></li>
-							<li><a href="#">Something else here</a></li>
+							<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
 							<!-- <li role="separator" class="divider"></li>
 							<li><a href="#">Separated link</a></li> -->
 						</ul>
