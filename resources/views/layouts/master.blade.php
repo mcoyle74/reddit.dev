@@ -78,7 +78,7 @@
 		@endif
 
 		<form method="GET" action="{{ action('Auth\AuthController@getLogout') }}">
-			<button type="submit" class="btn btn-default align-right">Logout</button>
+			<button type="submit" class="btn btn-default">Logout</button>
 		</form>
 	</div>
 
