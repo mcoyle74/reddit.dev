@@ -81,7 +81,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return view('posts.update');
+        return view('posts.create');
     }
 
     /**
