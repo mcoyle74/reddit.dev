@@ -27,4 +27,5 @@
 			@endforeach
 		</tbody>
 	</table>
+	<a href="{{ action('PostsController@create') }}">Create a Post</a>
 @stop
