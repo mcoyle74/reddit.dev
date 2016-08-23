@@ -10,5 +10,10 @@ class Post extends Model
             'title' => 'required|max:100',
             'url' => 'required|max:255',
             'content' => 'required'
-        ];
+    ];
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class, 'created_by');
+    }
 }
