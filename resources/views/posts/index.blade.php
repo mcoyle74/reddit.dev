@@ -23,6 +23,7 @@
 		</tbody>
 	</table>
 	<div class="text-center">
+		{!! $posts->render() !!}
 	</div>
 	<div>
 		<a href="{{ action('PostsController@create') }}">Create a Post</a>
