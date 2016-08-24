@@ -2,7 +2,7 @@
 @section('content')
 	<form method="GET" class="form-inline">
 		<div class="form-group">
-			<input name="keyword" type="text" class="form-control" placeholder="Search">
+			<input name="keyword" type="text" class="form-control" placeholder="Search post titles">
 		</div>
 		<button type="submit" class="btn btn-default">Submit</button>
 	</form>
@@ -29,7 +29,7 @@
 		</tbody>
 	</table>
 	<div class="text-center">
-		{{-- {!! $posts->render() !!} --}}
+		{!! $posts->render() !!}
 	</div>
 	<div>
 		<a href="{{ action('PostsController@create') }}">Create a Post</a>
