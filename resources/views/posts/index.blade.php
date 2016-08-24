@@ -4,7 +4,11 @@
 		<div class="form-group">
 			<input name="keyword" type="text" class="form-control" placeholder="Search post titles">
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-default">Search Titles</button>
+		<div class="form-group">
+			<input name="user_name" type="text" class="form-control" placeholder="Search user posts">
+		</div>
+		<button type="submit" class="btn btn-default">Search Users</button>
 	</form>
 	<table class="table table-striped table-bordered">
 		<thead>
