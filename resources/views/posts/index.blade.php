@@ -13,7 +13,7 @@
 		@foreach ($posts as $post)
 			<div class="">
 				<a href="{{ action('PostsController@show', [$post->id]) }}" class="title">{{ $post->title }}</a>
-				<p>submitted {{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A') }} by {{ $post->user->name }}</p>
+				<p>submitted {{ $post->created_at->diffForHumans() }} by {{ $post->user->name }}</p>
 			</div>
 		@endforeach
 	</div>
