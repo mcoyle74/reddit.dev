@@ -13,7 +13,7 @@ class PostsController extends Controller
 {
 	public function __construct()
 	{
-		$this->middleware('auth');
+		$this->middleware('auth', ['except' => ['index', 'show']]);
 	}
 	
 	/**
@@ -24,7 +24,7 @@ class PostsController extends Controller
 	public function index(Request $request)
 	{
 		if ($request->has('keyword')) {
-			$keyword = $request->get('keyword');
+			$keyword = $request->input('keyword');
 			$posts = Post::where('title', 'LIKE', '%' . $keyword . '%')->orWhere('name', $keyword)->join('users', 'users.id', '=', 'posts.created_by')->paginate(10);
 		} else {
 			$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
