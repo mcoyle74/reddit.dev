@@ -29,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">reddit.dev</a>
+					<a class="navbar-brand" href="/posts">reddit.dev</a>
 				</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,12 +50,6 @@
 						</li>
 					@endif
 				</ul>
-				<form method="GET" action="" class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
 			</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
