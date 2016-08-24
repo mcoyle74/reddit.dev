@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-	<form method="GET" class="form-inline">
+	<form method="GET" class="form-inline pull-right">
 		<div class="form-group">
 			<input name="keyword" type="text" class="form-control" placeholder="Search post titles">
 		</div>
