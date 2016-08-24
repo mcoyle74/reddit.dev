@@ -25,10 +25,7 @@ class PostsController extends Controller
 	{
 		if ($request->has('keyword')) {
 			$keyword = $request->get('keyword');
-			$posts = Post::where('title', 'LIKE', '%' . $keyword . '%')->paginate(10);
-		} elseif ($request->has('user_name')) {
-			$userName = $request->get('user_name');
-			$posts = Post::where('name', $userName)->join('users', 'users.id', '=', 'posts.created_by')->paginate(10);
+			$posts = Post::where('title', 'LIKE', '%' . $keyword . '%')->orWhere('name', $keyword)->join('users', 'users.id', '=', 'posts.created_by')->paginate(10);
 		} else {
 			$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
 		}
