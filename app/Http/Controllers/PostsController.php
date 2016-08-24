@@ -30,7 +30,7 @@ class PostsController extends Controller
 			$userName = $request->get('user_name');
 			$posts = Post::where('name', $userName)->join('users', 'users.id', '=', 'posts.created_by')->paginate(10);
 		} else {
-			$posts = Post::with('user')->paginate(10);
+			$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
 		}
 		return view('posts.index')->with('posts', $posts);
 	}
