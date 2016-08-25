@@ -87,7 +87,8 @@ class PostsController extends Controller
 	 */
 	public function edit($id)
 	{
-		return view('posts.create');
+		$post = Post::findOrFail($id);
+		return view('posts.edit')->with('post', $post);
 	}
 
 	/**
@@ -105,6 +106,7 @@ class PostsController extends Controller
 		$post->url = $request->input('url');
 		$post->content = $request->input('content');
 		$post->save();
+		return redirect()->action('PostsController@show', [$post->id]);
 	}
 
 	/**
