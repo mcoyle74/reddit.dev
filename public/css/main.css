@@ -14,3 +14,12 @@
 .count {
 	margin: 0;
 }
+
+#create-post-btn {
+	font-size: 1.25em;
+}
+
+#create-post-div {
+	margin-top: 10px;
+	clear: right;
+}
