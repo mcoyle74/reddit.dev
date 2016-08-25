@@ -30,17 +30,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/posts">reddit.dev</a>
+					<a class="navbar-brand" href="/posts">It's like reddit, but different</a>
 				</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="{{ action('Auth\AuthController@getLogin') }}">Login <span class="sr-only">(current)</span></a></li>
+					<li><a href="{{ action('Auth\AuthController@getLogin') }}">Login <span class="sr-only">(current)</span></a></li>
 					<li><a href="{{ action('Auth\AuthController@getRegister') }}">Register</a></li>
 					@if (Auth::check())
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, {{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="/posts/create">Create Post</a></li>
 								<li><a href="#">Edit Profile</a></li>
