@@ -72,7 +72,7 @@ class PostsController extends Controller
 	 */
 	public function show($id)
 	{
-		$post = Post::find($id);
+		$post = Post::findOrFail($id);
 		if (!$post) {
 			abort(404);
 		}
@@ -101,7 +101,7 @@ class PostsController extends Controller
 	public function update(Request $request, $id)
 	{
 		$this->validate($request, Post::$rules);
-		$post = Post::find($id);
+		$post = Post::findOrFail($id);
 		$post->title = $request->input('title');
 		$post->url = $request->input('url');
 		$post->content = $request->input('content');
@@ -117,7 +117,7 @@ class PostsController extends Controller
 	 */
 	public function destroy(Request $request, $id)
 	{
-		$post = Post::find($id);
+		$post = Post::findOrFail($id);
 		$post->delete();
 		return redirect()->action('PostsController@index');
 	}
