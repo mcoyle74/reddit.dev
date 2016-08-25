@@ -1,0 +1,16 @@
+.post>a {
+	font-size: 1.2em;
+}
+
+.date-and-user {
+	font-size: .8em;
+}
+
+.vote {
+	text-align: center;
+	padding-right: 0;
+}
+
+.count {
+	margin: 0;
+}
