@@ -20,7 +20,7 @@
 
 		<div class="form-group">
 			<label for="content">Content</label>
-			<input class="form-control" type="text" name="content" value="{{ old('content') }}">
+			<textarea class="form-control" type="text" name="content" value="{{ old('content') }}"></textarea>
 			@if ($errors->has('content'))
 				{!!  $errors->first('content', '<span class="alert alert-warning">:message</span>') !!}
 			@endif
