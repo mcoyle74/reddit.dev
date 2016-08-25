@@ -16,4 +16,9 @@ class Post extends BaseModel
 	{
 		return $this->belongsTo(User::class, 'created_by');
 	}
+
+	public function ownedBy($user)
+	{
+		return (!is_null($user)) ? $this->created_by == $user->id : false;
+	}
 }
