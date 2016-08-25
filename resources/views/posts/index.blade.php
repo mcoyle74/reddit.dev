@@ -11,7 +11,12 @@
 	</div>
 	<div class="">
 		@foreach ($posts as $post)
-			<div class="">
+			<div class="vote">
+				<a href=""><span class="glyphicon glyphicon-arrow-up"></span></a>
+				<p class="count">4</p>
+				<a href=""><span class="glyphicon glyphicon-arrow-down"></span></a>
+			</div>
+			<div class="post">
 				<a href="{{ action('PostsController@show', [$post->id]) }}" class="title">{{ $post->title }}</a>
 				<p>submitted {{ $post->created_at->diffForHumans() }} by {{ $post->user->name }}</p>
 			</div>
