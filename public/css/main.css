@@ -1,3 +1,7 @@
+body {
+	background-color: #f0f0f0;
+}
+
 .post>a {
 	font-size: 1.2em;
 }
@@ -19,7 +23,17 @@
 	font-size: 1.2em;
 }
 
-#create-post-div {
-	margin-top: 10px;
-	clear: right;
+.navbar-default {
+	background-color: transparent;
+	border: none;
+	color: #007733;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #007733;
+}
+
+.navbar-default .navbar-brand {
+	color: #007733;
+
 }
