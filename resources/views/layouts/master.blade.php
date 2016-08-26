@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Reddit</title>
+	<title>post-Posted</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,11 +30,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/posts">It's like reddit, but different</a>
+					<a class="navbar-brand" href="/posts">post-Posted</a>
 				</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<form method="GET" class="navbar-form navbar-right">
+					<div class="form-group">
+						<input name="keyword" type="text" class="form-control" placeholder="Search posts">
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="{{ action('Auth\AuthController@getLogin') }}">Login <span class="sr-only">(current)</span></a></li>
 					<li><a href="{{ action('Auth\AuthController@getRegister') }}">Register</a></li>

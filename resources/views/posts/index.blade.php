@@ -1,11 +1,5 @@
 @extends('layouts.master')
 @section('content')
-	<form method="GET" class="form-inline pull-right">
-		<div class="form-group">
-			<input name="keyword" type="text" class="form-control" placeholder="Search posts">
-		</div>
-		<button type="submit" class="btn btn-default">Search</button>
-	</form>
 	<div class="pull-right" id="create-post-div">
 		<a class="btn btn-primary" id="create-post-btn" href="{{ action('PostsController@create') }}">Submit a New Post</a>
 	</div>
