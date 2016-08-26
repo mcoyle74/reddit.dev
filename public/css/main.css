@@ -37,3 +37,12 @@ body {
 	color: #007733;
 
 }
+
+#vote-score {
+	font-size: 2em;
+	padding-bottom: 0;
+}
+
+#vote-div {
+	margin-top: 20px;
+}
